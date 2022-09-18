@@ -3,18 +3,21 @@ import { UsersController } from '@/infra/modules/users/users.controllers'
 import express, { Express } from 'express'
 import { useExpressServer } from 'routing-controllers'
 import { setupContainer } from './setup-container'
+import { setupSwagger } from './setup-swagger'
 
 export const setupApp = async (): Promise<Express> => {
-  const app = express()
+  let app = express()
 
   await setupContainer()
-
-  useExpressServer(app, {
-    routePrefix: 'api',
+  const routingControllersOptions = {
+    routePrefix: '/api',
     controllers: [UsersController],
     defaultErrorHandler: false,
     middlewares: [CustomErrorHandler]
-  })
+  }
+
+  useExpressServer(app, routingControllersOptions)
+  app = await setupSwagger(app, routingControllersOptions)
 
   return app
 }
