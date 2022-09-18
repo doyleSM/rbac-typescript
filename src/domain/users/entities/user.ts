@@ -1,4 +1,4 @@
-import { BaseEntity } from '@/domain/shared/entities/base-entity'
+import { BaseEntity } from '@/domain/shared/entities/base/base-entity'
 
 export class User extends BaseEntity {
   name: string

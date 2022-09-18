@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  rbac:
+    image: postgres:14.2-alpine
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: 5e13f5f57d9792d3
+      POSTGRES_USER: 6402673de752e427
+      POSTGRES_DB: rbac
+    ports:
+      - "5433:5432"
+    volumes:
+      - rbac_volume:/var/lib/postgresql/data
+
+volumes:
+  rbac_volume:

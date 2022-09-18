@@ -6,7 +6,6 @@ import { ExpressErrorMiddlewareInterface, Middleware } from 'routing-controllers
 @Middleware({ type: 'after' })
 export class CustomErrorHandler implements ExpressErrorMiddlewareInterface {
   error (error: any, request: Request, response: Response, next: NextFunction): Response {
-    console.log(error)
     if (error?.errors?.every((error: any) => error instanceof ValidationError)) {
       const parsedError = error?.errors?.map((error: any) => {
         return this.parseValidationError(error)
