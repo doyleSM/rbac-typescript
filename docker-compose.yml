@@ -5,11 +5,11 @@ services:
     image: postgres:14.2-alpine
     restart: "no"
     environment:
-      POSTGRES_PASSWORD: 5e13f5f57d9792d3
-      POSTGRES_USER: 6402673de752e427
-      POSTGRES_DB: rbac
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_DB: ${PG_DATABASE}
     ports:
-      - "5433:5432"
+      - "${PG_PORT}:5432"
     volumes:
       - rbac_volume:/var/lib/postgresql/data
 

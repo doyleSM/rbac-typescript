@@ -3,11 +3,11 @@ import { BaseEntity, UserEntity } from '../entities'
 
 const pgMikroOrmConfig = {
   type: 'postgresql',
-  dbName: 'rbac',
-  host: '127.0.0.1',
-  user: '6402673de752e427',
-  password: '5e13f5f57d9792d3',
-  port: process.env.DB_PG_PORT ?? 5433,
+  dbName: process.env.PG_DATABASE,
+  host: process.env.PG_HOST,
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT ?? 5432,
   entities: [BaseEntity, UserEntity],
   debug: process.env.TS_NODE_DEV !== undefined,
   migrations: {

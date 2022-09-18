@@ -10,8 +10,7 @@ export class PgUserRepository implements UserRepository<UserEntity> {
 
   async create (item: UserEntity): Promise<any> {
     const user = this.userEntityManager.create(item)
-    const teste = await this.userEntityManager.persistAndFlush(user)
-    console.log(teste)
+    await this.userEntityManager.persistAndFlush(user)
     return user
   }
 }
