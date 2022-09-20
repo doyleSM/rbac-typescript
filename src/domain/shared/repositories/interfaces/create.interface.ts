@@ -1,3 +1,3 @@
 export interface Create<T> {
-  create: (item: T) => Promise<T | Boolean>
+  create: (item: T) => Promise<T>
 }
