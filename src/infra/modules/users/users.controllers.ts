@@ -1,4 +1,4 @@
-import { AuthenticateUserUseCase } from '@/application/users/use-cases/authenticate-user-use-case'
+import { AuthenticateUserUseCase } from '@/application/auth/use-cases/authenticate-user-use-case'
 import { CreateUserUseCase } from '@/application/users/use-cases/create-user-use-case'
 import { Body, JsonController, Post } from 'routing-controllers'
 import { OpenAPI } from 'routing-controllers-openapi'

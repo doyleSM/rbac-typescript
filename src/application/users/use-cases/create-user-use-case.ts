@@ -1,11 +1,11 @@
-import { CreateUserDto } from '@/application/dto/create-user.dto'
 import { Hasher } from '@/domain/crypto/interfaces'
 import { BaseUseCase } from '@/domain/shared/use-cases/base/base-use-case'
 import { UserStatusEnum } from '@/domain/users/constants/user-status.enum'
 import { User } from '@/domain/users/entities/user'
 import { UserRepository } from '@/domain/users/repository/users.repository'
+import { CreateUserDto } from '../dto/create-user.dto'
 
-export class CreateUserUseCase implements BaseUseCase<CreateUserDto, any> {
+export class CreateUserUseCase implements BaseUseCase<CreateUserDto, User> {
   constructor (
     readonly userRepository: UserRepository<User>,
     readonly hasher: Hasher

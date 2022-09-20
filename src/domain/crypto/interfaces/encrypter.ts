@@ -1,3 +1,5 @@
+import { EncrypterType } from '../types/encypter-type'
+
 export interface Encrypter {
-  encrypt: (plaintext: string) => Promise<string>
+  encrypt: (payload: EncrypterType) => Promise<string>
 }
