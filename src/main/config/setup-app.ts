@@ -18,6 +18,5 @@ export const setupApp = async (): Promise<Express> => {
 
   useExpressServer(app, routingControllersOptions)
   app = await setupSwagger(app, routingControllersOptions)
-
   return app
 }

@@ -1,7 +1,7 @@
 import { Create, Delete, Find, FindOne, Update } from '../interfaces'
 
 export abstract class BaseRepository<T> implements Create<T>, Delete, Find<T>, FindOne<T>, Update<T> {
-  async create (item: T): Promise<Boolean | T> {
+  async create (item: T): Promise<T> {
     throw new Error('Method not implemented.')
   }
 

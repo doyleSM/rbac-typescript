@@ -3,7 +3,7 @@ import { User } from '@/domain/users/entities/user'
 import { UserRepository } from '@/domain/users/repository/users.repository'
 import { EntityRepository } from '@mikro-orm/postgresql'
 import { inject, injectable } from 'tsyringe'
-import { UserEntity } from '../../databases/postgres/mikro-orm/entities'
+import { UserEntity } from '../../databases/postgres/mikro-orm/entities/user.entity'
 
 @injectable()
 export class PgUserRepository implements UserRepository<User> {
