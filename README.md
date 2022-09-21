@@ -6,7 +6,7 @@
 
  - Clean architecture
  - SOLID
- - Injecão de dependencia
+ - Dependency Injection
  - Factories
  - Bcrypt
  - JWT
