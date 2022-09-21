@@ -16,10 +16,10 @@
  - routing-controllers
  - class-validator
  - Swagger
- etc
+ - etc
 
 
 ## TODO
-Adicionar documentação como executar
-.env
-collection exemplo das rotas
+- Adicionar documentação como executar
+- .env
+- Collection exemplo das rotas
