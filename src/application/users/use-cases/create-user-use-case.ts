@@ -1,4 +1,4 @@
-import { Hasher } from '@/domain/crypto/interfaces'
+import { Hasher } from '@/domain/auth/interfaces'
 import { BaseUseCase } from '@/domain/shared/use-cases/base/base-use-case'
 import { UserStatusEnum } from '@/domain/users/constants/user-status.enum'
 import { User } from '@/domain/users/entities/user'

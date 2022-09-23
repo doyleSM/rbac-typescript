@@ -1,5 +1,5 @@
-import { Encrypter } from '@/domain/crypto/interfaces'
-import { EncrypterType } from '@/domain/crypto/types/encypter-type'
+import { Encrypter } from '@/domain/auth/interfaces'
+import { EncrypterType } from '@/domain/auth/types/encypter-type'
 import { BaseUseCase } from '@/domain/shared/use-cases/base/base-use-case'
 
 export class GenerateTokenUseCase implements BaseUseCase<EncrypterType, string> {

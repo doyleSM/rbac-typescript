@@ -10,7 +10,7 @@ export class CustomErrorHandler implements ExpressErrorMiddlewareInterface {
     //   return response.status(500).json(error.message)
     // }
     if (error?.errors?.every((error: any) => error instanceof ValidationError)) {
-      const parsedError = error?.errors?.map((error: any) => {
+      const parsedError = error?.errors?.map((error: ValidationError) => {
         return this.parseValidationError(error)
       })
       return response.status(error.httpCode).json(parsedError)

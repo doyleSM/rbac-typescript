@@ -1,6 +1,6 @@
 
-import { Decrypter, Encrypter } from '@/domain/crypto/interfaces'
-import { EncrypterType } from '@/domain/crypto/types/encypter-type'
+import { Decrypter, Encrypter } from '@/domain/auth/interfaces'
+import { EncrypterType } from '@/domain/auth/types/encypter-type'
 import jwt from 'jsonwebtoken'
 
 export class JwtAdapter implements Encrypter, Decrypter {
@@ -10,7 +10,7 @@ export class JwtAdapter implements Encrypter, Decrypter {
     return jwt.sign(payload, this.secret)
   }
 
-  async decrypt (ciphertext: string): Promise<string> {
+  async decrypt (ciphertext: string): Promise<EncrypterType> {
     return jwt.verify(ciphertext, this.secret) as any
   }
 }

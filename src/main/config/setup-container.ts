@@ -10,11 +10,12 @@ import { PgUserRepository } from '@/infra/modules/users/repository/user-reposito
 import { findUserUseCaseFactory } from '../factories/users/find-user-use-case-factory'
 import { createUserUseCaseFactory } from '../factories/users/create-user-use-case-factory'
 import { authenticateUserUseCaseFactory } from '../factories/auth/authenticate-user-use-case-factory'
-import { BCRYPT_ADAPTER, GENERATE_TOKEN_USE_CASE, JWT_ADAPTER } from '@/infra/modules/auth/constants'
+import { BCRYPT_ADAPTER, FIND_USER_BY_TOKEN_USE_CASE, GENERATE_TOKEN_USE_CASE, JWT_ADAPTER } from '@/infra/modules/auth/constants'
 import { bcryptAdapterFactory } from '../factories/auth/bcrypt-adapter-factory'
 import { jwtAdapterFactory } from '../factories/auth/jwt-adapter-factory'
 import { generateTokenUseCaseFactory } from '../factories/auth/generate-token-use-case-factory'
 import { UserEntity } from '@/infra/modules/databases/postgres/mikro-orm/entities/user.entity'
+import { findUserByTokenUseCaseFactory } from '../factories/auth/find-user-by-token-factory'
 
 export const setupContainer = async (): Promise<void> => {
   useContainer(new TsyringeAdapter(container))
@@ -59,5 +60,10 @@ export const setupContainer = async (): Promise<void> => {
   container.register(
     GENERATE_TOKEN_USE_CASE,
     generateTokenUseCaseFactory
+  )
+
+  container.register(
+    FIND_USER_BY_TOKEN_USE_CASE,
+    findUserByTokenUseCaseFactory
   )
 }

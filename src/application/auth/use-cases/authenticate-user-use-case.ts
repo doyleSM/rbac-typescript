@@ -1,5 +1,5 @@
 import { FindUserUseCase } from '@/application/users/use-cases/find-user-use-case'
-import { HashComparer } from '@/domain/crypto/interfaces'
+import { HashComparer } from '@/domain/auth/interfaces'
 import { BaseUseCase } from '@/domain/shared/use-cases/base/base-use-case'
 import { User } from '@/domain/users/entities/user'
 import { UserRepository } from '@/domain/users/repository/users.repository'

@@ -1,1 +1,1 @@
-export * from './custom-error'
+export * from './shared/custom-error'
